@@ -15,4 +15,14 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DefensiveProgrammingBefore\DefensiveProgrammingBefore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="emails.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

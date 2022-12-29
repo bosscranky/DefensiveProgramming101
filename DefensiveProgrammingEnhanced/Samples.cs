@@ -1,6 +1,6 @@
 ﻿namespace DefensiveProgrammingEnhanced
 {
-    public class Class1
+    public class Samples
     {
 
     }
