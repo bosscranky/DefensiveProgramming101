@@ -20,10 +20,10 @@ namespace DefensiveProgrammingTests
             var theCustomer = DefensiveProgrammingBefore.Samples.FindById(4, Customers);
             Assert.IsNotNull(theCustomer);
 
-            var isValid = Samples.IsValidEmail("thesnarkymarky@gmail.com");
+            var isValid = Samples.IsValidEmail("thebosscranky@gmail.com");
             Assert.IsTrue(isValid);
 
-            var contains = Samples.FileContainsEmail(@"emails.txt", "thesnarkymarky@gmail.com");
+            var contains = Samples.FileContainsEmail(@"emails.txt", "thebosscranky@gmail.com");
             Assert.IsTrue(contains);
 
         }
