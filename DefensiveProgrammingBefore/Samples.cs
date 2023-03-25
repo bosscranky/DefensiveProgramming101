@@ -5,33 +5,52 @@ namespace DefensiveProgrammingBefore
     public class Samples
     {
 
+        #region Email Validation
 
-
-
-        public static Customer FindById(int suppliedId, List<Customer> customers)
+        public bool IsValidEmail(string candidate)
         {
-
-#pragma warning disable CS8603 // Possible null reference return.
-
-            return customers.Where(customer => customer.Id == suppliedId).FirstOrDefault();
-
-#pragma warning restore CS8603 // Possible null reference return.
-
-
-        }
-
-        public static bool IsValidEmail(string candidate)
-        {
+            // worlds simplest, laziest and possibly least efficeint check.
             return candidate.Contains("@") && candidate.Contains(".");
         }
+        #endregion
 
+        #region File Method
 
-        public static bool FileContainsEmail(string fileName, string candidate)
+        public bool FileContainsEmail(string fileName, string candidate)
         {
             string contents = System.IO.File.ReadAllText(fileName);
             return contents.Contains(candidate);
         }
 
+        #endregion
+
+        #region Transaction Methods
+
+        public Transaction? Purchase(Customer aCustomer, Tender aTender, decimal anAmount)
+        {
+            if (aCustomer != null && aTender != null)
+            {
+                //do stuff;
+                aTender.Charge(anAmount);
+                return new Transaction(anAmount, aTender, aCustomer);
+            }
+
+            return null;
+        }
+
+        public Transaction? Return(Transaction aTransaction, Tender aTender)
+        {
+            if (aTransaction != null && aTender != null)
+            {
+                //do stuff;
+                aTender.Credit(aTransaction.Amount);
+                return new Transaction(aTransaction.Amount * -1, aTender, aTransaction.Customer);
+            }
+
+            return null;
+        }
+
+        #endregion
     }
 
 }
