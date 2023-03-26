@@ -40,8 +40,10 @@ namespace DefensiveProgrammingTests
             var isValid = Sample.IsValidEmail(TestEmail);
             Assert.IsTrue(isValid);
 
+            isValid = Sample.IsValidEmail(null);
+
 #if __GANDALF__
-            Assert.IsTrue(Sample.IsValidEmail(null));
+            Assert.IsFalse(Sample.IsValidEmail(null));
 #endif
 
 
