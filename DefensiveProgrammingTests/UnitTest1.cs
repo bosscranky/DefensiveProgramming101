@@ -55,10 +55,10 @@ namespace DefensiveProgrammingTests
             var contains = Sample.FileContainsEmail(TestFileName, TestEmail);
             Assert.IsTrue(contains);
 
-#if __GANDALF__
+//#if __GANDALF__
 
-            Assert.IsTrue(Sample.FileContainsEmail(TestAccountNumber, TestReturnAccountNumber));
-#endif
+            Assert.IsFalse(Sample.FileContainsEmail(TestAccountNumber, TestReturnAccountNumber));
+//#endif
         }
 
         [TestMethod]
