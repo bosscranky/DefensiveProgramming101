@@ -1,4 +1,4 @@
-//#define __GANDALF__
+#define __GANDALF__
 using DefensiveProgrammingShared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -15,6 +15,9 @@ namespace DefensiveProgrammingTests
     [TestClass]
     public class UnitTest1
     {
+        #region Properties
+
+        
         private string TestAccountNumber { get; } = "FEEE FIEE FOE FUM";
 
         private string TestReturnAccountNumber { get; } = "MY HACKY ACCOUNT";
@@ -29,6 +32,10 @@ namespace DefensiveProgrammingTests
 
         private Samples Sample { get; set; } = new Samples();
 
+        #endregion
+
+        #region Email Methods
+        
         [TestInitialize]
         public void Init()
         {
@@ -61,6 +68,8 @@ namespace DefensiveProgrammingTests
 //#endif
         }
 
+        #endregion
+
         [TestMethod]
         public void PurchaseAndReturnSameTendersTest()
         {
@@ -85,6 +94,9 @@ namespace DefensiveProgrammingTests
             Assert.IsTrue(theTender.Balance == 0m);
 
         }
+
+
+
 
 
         [TestMethod]
@@ -114,6 +126,13 @@ namespace DefensiveProgrammingTests
             //Assert.IsTrue(theTender.Balance == 0m);
 
         }
+
+        
+        
+        
+        
+        
+        //Assert.IsTrue((theSale.Amount + theReturn.Amount) == 0);
 
     }
 }

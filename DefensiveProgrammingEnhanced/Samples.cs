@@ -75,7 +75,7 @@ namespace DefensiveProgrammingEnhanced
             // note: in private methods, you may decide that input validation has already been completed.
             // that's dealers choice, I know that it gets old constantly checking for nulls...
             // Also, a number of my previous clients have had a check here, too, usually at a customer level,
-            // to determine if they should even allow returns to a different tender.
+            // to allow the customer to specify if they allow returns to a different tender.
             return account != null && aTender != null && account.AccountNumber == aTender.AccountNumber;
         }
 
